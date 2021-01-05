@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "Q4.C": "cpp"
+        "Q4.C": "cpp",
+        "Q11.C": "cpp",
+        "Q2-1.C": "cpp"
     },
     "code-runner.runInTerminal": true
     
