@@ -8,7 +8,7 @@ void ary_copy(int a[], int b[], int n)
 {
 	int i;
 	for (i = 0; i <= n - 1; i++) {
-		b[i] = a[i];
+		a[i] = b[i];
 	}
 }
 
@@ -27,7 +27,7 @@ int main(void)
 		printf("%d ", y[i]);
 	}
 	printf("\n");
-	ary_copy(x, y, SIZE);
+	ary_copy(y, x, SIZE);
 	printf("복사 후 배열 x : ");
 	for (i = 0; i < SIZE; i++) {
 		printf("%d ", x[i]);
