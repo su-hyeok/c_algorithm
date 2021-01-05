@@ -22,7 +22,7 @@
 //	int i;
 //	int* height = NULL;
 //	srand((unsigned int)time(NULL)); /*시간으로 난수의 seed 초기화*/
-//	int num = (rand() % 21) + 5; /*5 ~ 10의 난수 생성 - 대입*/
+//	int num = (rand() % 21) + 5; /*5 ~ 20의 난수 생성 - 대입*/
 //	height = (int*)calloc(num, sizeof(int)); /*요소 개수가 num인 배열 생성*/
 //	for (i = 0; i < num; i++) {
 //		height[i] = (rand() % 90) + 100; /*100 ~ 189의 난수 생성 - 대입*/
