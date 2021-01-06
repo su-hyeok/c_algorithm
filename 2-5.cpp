@@ -13,13 +13,13 @@ int maxof(const int a[], int n)
 	}
 }
 
-int main (void){
+int main(void){
 	int i;
 	int *height;
 	int number;
 	printf("사람 수: ");
 	scanf_s("%d", &number);
-	height = calloc(number, sizeof(int));
+	height = (int*) calloc(number, sizeof(int));
 	printf("%d 사람의 키를 입력하세요\n", number);
 	for (i = 0; i < number; i++) {
 		printf("height[%d]: ", i);
