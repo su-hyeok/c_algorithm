@@ -27,4 +27,6 @@ int main(){
         scanf("%3d",&y[i]);
     }
     ary_copy(x,y,number);
+    free(x);
+    free(y);
 }
