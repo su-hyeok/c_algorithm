@@ -1,16 +1,16 @@
-//사람 키의 최솟값을 구하는 프로그램을 작성하세요
+//키의 평균값을 구하는 프로그램을 작성하세요
 #include<stdio.h>
 #include<stdlib.h>
 
-int minof(const int a[], int n){
+double aveof(const int a[],int n){
     int i;
-    int min = a[0];
-    for ( i = 0; i < n; i++){
-        if (a[i]<min){
-            min = a[i];
-        }
+    float sum = 0;
+    float average;
+    for (i = 0; i < n; i++){
+        sum +=a[i]; 
     }
-    return min;
+    average = sum / n;
+    return average;
 }
 
 int main(void){
@@ -25,6 +25,6 @@ int main(void){
         printf("height[%d]",i);
         scanf("%d",&height[i]);
     }
-    printf("최솟값은%d입니다",minof(height,number));
+    printf("키의 평균값은%f입니다",aveof(height,number));
     free(height);
 }

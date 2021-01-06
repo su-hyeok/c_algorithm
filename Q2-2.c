@@ -1,16 +1,14 @@
-//사람 키의 최솟값을 구하는 프로그램을 작성하세요
+//키의 합계를 구하는 프로그램을 작성하세요
 #include<stdio.h>
 #include<stdlib.h>
 
-int minof(const int a[], int n){
+int sumof(const int a[],int n){
     int i;
-    int min = a[0];
-    for ( i = 0; i < n; i++){
-        if (a[i]<min){
-            min = a[i];
-        }
+    int sum = 0;
+    for (i = 0; i < n; i++){
+        sum +=a[i]; 
     }
-    return min;
+    return sum;
 }
 
 int main(void){
@@ -25,6 +23,6 @@ int main(void){
         printf("height[%d]",i);
         scanf("%d",&height[i]);
     }
-    printf("최솟값은%d입니다",minof(height,number));
+    printf("키의 합계는%d입니다",sumof(height,number));
     free(height);
 }
