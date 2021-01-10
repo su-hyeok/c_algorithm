@@ -3,19 +3,20 @@
 
 void* binsearch(const void* key, const void* base, size_t nmemb, size_t size, int(*compar)(const void*, const void*))
 {
-	size_t i; //unsigned int
-	int* x = (int*)base;
+	char* x = (char*)base;
 	size_t pl = 0; //맨 앞 인덱스
 	size_t pr = nmemb - 1; //맨 뒤 인덱스
 	size_t pc; //중간 인덱스
 	do {
 		pc = (pl + pr) / 2;
-		if ((*compar)((const void*)&x[pc * size], key) < 0)
-			pl = pc + 1;
-		else if ((*compar)((const void*)&x[pc * size], key) > 0)
-			pr = pc - 1;
-		else
+		if ((*compar)((const void*)&x[pc * size], key) == 0)
 			return (&x[pc * size]);
+		else if ((*compar)((const void*)&x[pc * size], key) < 0)
+			pl = pc + 1;
+		else if (pl == pr)
+			break;
+		else
+			pr = pc - 1;
 	} while (pl <= pr);
 	return NULL;
 }
