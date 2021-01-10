@@ -12,17 +12,17 @@ int bin_search2(const int a[], int n, int key)
 		pc = (pl + pr) / 2;
 		if (a[pc] == key)//검색 성공
 		{
-			for (i = pc, i >= 0; i--;)
+			for (pc; pc > pl; pc--)
 			{
-				if (a[i] == key)
-					idx = i;
+				if (a[pc - 1] == key)
+					pc--;
 			}
-			return idx;
+			return pc;
 		}
 		else if (a[pc] > key)
-			pl = pc + 1;
-		else
 			pr = pc - 1;
+		else
+			pl = pc + 1;
 	} while (pl <= pr);
 	return -1; //검색 실패
 }
