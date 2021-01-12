@@ -99,7 +99,7 @@ int Search2(const IntQueue* q, int x)
 	int i, idx;
 
 	for (i = 0; i < q->num; i++) {
-		if (q->que[(i + q ->front) % q->max] == x)
+		if (q->que[(q->front + i) % q->max] == x)
 			return i;		/* 검색 성공 */
 	}
 	return -1;				/* 검색 실패 */

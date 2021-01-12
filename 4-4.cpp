@@ -4,17 +4,17 @@
 int main(void)
 {
 	IntQueue que;
-	if (Initialize(&que, 5) == -1) {
+	if (Initialize(&que, 64) == -1) {
 		puts("큐 생성에 실패하였습니다.");
 		return 1;
 	}
 
 	while (1) {
 		int menu, x;
-		int i;
+		int idx, i;
 
 		printf("현재 데이터 수 : %d / %d\n", Size(&que), Capacity(&que));
-		printf("(1) 인큐 (2) 디큐 (3) 피크 (4) 출력 (5) 초기화 (6) 검색 (7) 비어 있는 (8) 가득 찬 (0) 종료 : ");
+		printf("(1) 인큐 (2) 디큐 (3) 피크 (4) 출력 (5) 초기화 (6) 검색1 (7) 검색2 (8) 비어 있는 (9) 가득 찬 (0) 종료 : ");
 		scanf_s("%d", &menu);
 		if (menu == 0) break;
 
@@ -51,20 +51,29 @@ int main(void)
 		case 6: /*--- 검색 ---*/
 			printf("검색 데이터 : ");
 			scanf_s("%d", &x);
+			if ((idx = Search2(&que, x)) == -1)
+				puts("\a오류 : 검색에 실패하였습니다.");
+			else
+				printf("검색 데이터는 %d 인덱스에 있습니다.\n", idx);
+			break;
+
+		case 7: /*--- 검색2 ---*/
+			printf("검색 데이터 : ");
+			scanf_s("%d", &x);
 			if ((i = Search2(&que, x)) == -1)
 				puts("\a오류 : 검색에 실패하였습니다.");
 			else
-				printf("검색 데이터는 배열 que[%d]에 있습니다.\n", i);
+				printf("검색 데이터는 큐의 맨 앞 요소에서 %d만큼 뒤에 있습니다.\n", i);
 			break;
 
-		case 7: /*--- 비어 있는 ---*/
+		case 8: /*--- 비어 있는 ---*/
 			if (IsEmpty(&que) == 1)
 				puts("\a큐가 비어 있습니다.");
 			else
 				printf("비어 있지 않습니다.\n");
 			break;
 
-		case 8: /*--- 가득 찬 ---*/
+		case 9: /*--- 가득 찬 ---*/
 			if (IsFull(&que) == 1)
 				puts("\a큐가 가득 찼습니다.");
 			else
