@@ -11,6 +11,7 @@ int main(void)
 
 	while (1) {
 		int menu, x;
+		int idx;
 
 		printf("현재 데이터 수 : %d / %d\n", Size(&s), Capacity(&s));
 		printf("(1) 푸시 (2) 팝 (3) 피크 (4) 출력 (5) 초기화 (6) 검색 (7) 비어 있는 (8) 가득 찬 (0) 종료 : ");
@@ -50,10 +51,10 @@ int main(void)
 		case 6: /*--- 검색 ---*/
 			printf("검색할 데이터 : ");
 			scanf_s("%d", &x);
-			if (Search(&s, x) == -1)
+			if ((idx = Search(&s, x)) == -1)
 				puts("\a오류 : 검색에 실패하였습니다.");
 			else
-				printf("검색 데이터는 %d입니다.\n", x);
+				printf("검색 데이터는 %d에 있습니다.\n", idx);
 			break;
 
 		case 7: /*--- 비어 있는 ---*/
