@@ -51,7 +51,7 @@ int main(void)
 		case 6: /*--- 검색 ---*/
 			printf("검색 데이터 : ");
 			scanf_s("%d", &x);
-			if ((idx = Search2(&que, x)) == -1)
+			if ((idx = Search(&que, x)) == -1)
 				puts("\a오류 : 검색에 실패하였습니다.");
 			else
 				printf("검색 데이터는 %d 인덱스에 있습니다.\n", idx);
