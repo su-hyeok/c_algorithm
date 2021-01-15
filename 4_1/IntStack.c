@@ -1,10 +1,10 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "IntStack.h"
 
 int initialize(IntStack *s,int max){
     s ->ptr =0;
-    if (s->stk = calloc(max,sizeof(int)) == NULL){
+    if ((s->stk = calloc(max,sizeof(int))) == NULL){
         s->max = 0;
         return -1;
     }
@@ -65,6 +65,8 @@ int search(const IntStack *s, int x){
         }
     return -1;
 }
+}
+
 void Print(const IntStack *s){
 	int i;
 	for (i = 0; i < s->ptr; i++)		
