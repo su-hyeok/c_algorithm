@@ -1,8 +1,8 @@
 /*shell 4-2-1정렬
 보초법 사용해봄*/
 
-#include <stdio.h>	
-#include <stdlib.h>	
+#include <stdio.h>
+#include <stdlib.h>
 
 void shell(int a[], int n)
 {
